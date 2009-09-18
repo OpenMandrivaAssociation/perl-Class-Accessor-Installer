@@ -12,11 +12,13 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(Pod::Generated)
 BuildRequires: perl(Sub::Name)
 BuildRequires: perl(Test::Compile)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(UNIVERSAL::require)
 BuildRequires: perl(Vim::Tag)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -28,15 +30,11 @@ needs of the Class::Accessor::Complex manpage and friends.
 It is intended as a mixin, that is, your accessor-generating class should
 inherit from this class.
 
-METHODS
-    * install_accessor
-
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
 %{make}
 
 %check
@@ -54,5 +52,3 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
