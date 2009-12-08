@@ -11,12 +11,14 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: perl(Class::Accessor)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Pod::Generated)
 BuildRequires: perl(Sub::Name)
 BuildRequires: perl(Test::Compile)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(UNIVERSAL::require)
+BuildRequires: perl(URI::Escape)
 BuildRequires: perl(Vim::Tag)
 
 BuildArch: noarch
@@ -35,10 +37,10 @@ inherit from this class.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
 rm -rf %buildroot
