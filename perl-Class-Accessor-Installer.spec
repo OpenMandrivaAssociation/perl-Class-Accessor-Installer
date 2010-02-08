@@ -1,5 +1,5 @@
 %define upstream_name    Class-Accessor-Installer
-%define upstream_version 0.06
+%define upstream_version 0.08
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -36,7 +36,7 @@ inherit from this class.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor --skipdeps
 %make
 
 %check
