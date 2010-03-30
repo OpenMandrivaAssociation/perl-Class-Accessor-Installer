@@ -1,5 +1,5 @@
 %define upstream_name    Class-Accessor-Installer
-%define upstream_version 1.100820
+%define upstream_version 1.100880
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
