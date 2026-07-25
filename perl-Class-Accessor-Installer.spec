@@ -2,14 +2,14 @@
 %define upstream_version 1.100880
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 
 Summary:	Install an accessor subroutine
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/hanekomu/Class-Accessor-Installer
+Source0:	https://cpan.metacpan.org/authors/id/M/MA/MARCEL/Class-Accessor-Installer-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
